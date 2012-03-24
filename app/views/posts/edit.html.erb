@@ -1,0 +1,15 @@
+<h1>Posts#edit</h1>
+
+<ul>
+
+<%= form_for @post, :url => {"action"=>"edit", "controller"=>"posts", "id"=>":id"}, :html => {:class => "edit post"} do |f| %>
+
+    <li><%= f.label :title %></li>
+    <li><%= f.text_field :title %></li>
+    <li><%= f.label :body %></li>
+    <li><%= f.text_area :body %></li>
+    <li><%= f.submit "Post" %></li>
+    
+<% end %>
+
+</ul>

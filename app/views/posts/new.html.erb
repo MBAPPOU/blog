@@ -1,0 +1,15 @@
+<h1>New Post</h1>
+
+<ul> 
+<%= form_for @post, :url => { :controller => "posts",:action => "create" }, :html => {:class => "new post"} do |f| %>
+
+     <li><%= f.label :title %></li>
+     <li><%= f.text_field :title %></li>
+     
+     <li><%= f.label :body %></li>
+     <li><%= f.text_area :body, :size => "60x12" %></li>
+     
+     <li><%= f.submit "Post" %></li>
+     
+<% end %>
+</ul> 

@@ -1,0 +1,17 @@
+<h1>Posts#index</h1>
+
+<ul>  
+
+<li>Posts List</li>
+
+<% @posts.each do |post| %> 
+     <li><%= post.title %></li>
+     <li><%= post.body %></li>
+     <li><%= link_to "Edit post", edit_post_path(post) %></li>
+     <li>----------------</li>
+    
+<% end %>
+     <p><%= link_to "create post", new_post_path %></p>
+</ul>
+
+
