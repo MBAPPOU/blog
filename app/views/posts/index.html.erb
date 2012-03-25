@@ -1,4 +1,4 @@
-<h1>Posts#index</h1>
+<h1>Blog</h1>
 
 <ul>  
 
@@ -7,11 +7,10 @@
 <% @posts.each do |post| %> 
      <li><%= post.title %></li>
      <li><%= post.body %></li>
-     <li><%= link_to "Edit post", edit_post_path(post) %></li>
      <li>----------------</li>
-    
+     
 <% end %>
-     <p><%= link_to "create post", new_post_path %></p>
+    <p> <%= link_to "Create a new Post", new_post_path %> </p>
 </ul>
 
 

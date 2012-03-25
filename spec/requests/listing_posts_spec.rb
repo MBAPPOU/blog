@@ -18,28 +18,15 @@ describe "ListingPosts" do
     describe "GET /posts/new " do
        it "should create a new post" do
          visit posts_path
-         click_link 'create post'
+         click_link 'Create a new Post'
          fill_in 'post_title', :with => 'nouveau post'
          fill_in 'post_body', :with => 'Coucou un nouveau post !'
-         click_button 'Post'
+         click_button 'Create'
          current_path.should == '/posts'
        end
     end
     
-    describe "GET  /post/edit " do
-       it "should edit a post" do
-          visit posts_path
-          click_link 'create post'
-          fill_in 'post_title', :with => 'Hello'
-          fill_in 'post_body', :with => 'Just to say hi!'
-          click_button 'Post'
-          click_link 'Edit'
-          fill_in 'post_title',:with => 'Bye'
-          fill_in 'post_body',:with => 'Goodbye'
-          click_button 'Post'
-          page.should have_content "Bye"
-       end
-    end
+    
     
     
   end

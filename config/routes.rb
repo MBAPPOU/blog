@@ -1,12 +1,10 @@
 Blog::Application.routes.draw do
 
 
-  resources :posts , :only => [:index,:new,:edit]
-  #match '/posts' => 'posts#index',:as => 'posts' , :via => :get
-  match '/posts' => 'posts#create',:via => :post
-  #match '/posts/new' => 'posts#new',:as => 'new_post' , :via => :get
-  #match '/posts/edit' => 'posts#edit', :as => 'edit_post', :via => :get
-  match '/posts/:id/update' => 'posts#update', :as => 'update_post' , :via => :post
+  
+
+  resources :posts , :only => [:index,:new]
+  match '/posts' => "posts#create", :via => :post
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
