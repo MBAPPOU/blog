@@ -20,4 +20,11 @@ describe PostsController do
     post('/posts').should route_to("posts#create")
   end
   
+  it "should provide the aliast post_path for /posts/:id" do 
+    post_path.should == '/posts/:id'
+  end
+  
+  it "routes to #show" do 
+    get ('/posts/42').should route_to("posts#show")
+  end
 end

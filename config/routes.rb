@@ -1,9 +1,7 @@
 Blog::Application.routes.draw do
 
 
-  
-
-  resources :posts , :only => [:index,:new]
+  resources :posts , :only => [:index,:new,:show]
   match '/posts' => "posts#create", :via => :post
   
   # The priority is based upon order of creation:

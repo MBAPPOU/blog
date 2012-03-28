@@ -9,7 +9,7 @@ class PostsController < ApplicationController
  
  def create
     Post.create(params[:post])
-    redirect posts_path
+    redirect_to posts_path
  end
  
  def show

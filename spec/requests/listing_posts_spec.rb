@@ -26,8 +26,23 @@ describe "ListingPosts" do
        end
     end
     
+    describe "GET /posts/:id " do
+       it "should print a post" do
+         visit posts_path
+         click_link 'Look'
+         click_link 'Back'
+         current_path.should == '/posts'
+       end
+    end
     
-    
+    describe "GET /posts/:id/edit " do
+       it "should print a post" do
+         visit posts_path
+         click_link 'Look'
+         click_link 'Edit'
+         current_path.should == '/posts'
+       end
+    end
     
   end
 end
