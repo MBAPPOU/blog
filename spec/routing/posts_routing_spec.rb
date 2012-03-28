@@ -34,5 +34,25 @@ describe PostsController do
           it "routes to #show" do
             get ( "/posts/#{@post1.id}" ).should route_to("posts#show")
           end
+          
+          it "should provide the aliast edit_post_path for /posts/:id/edit" do
+             edit_post_path(@post1).should == "/posts/#{@post1.id}/edit"
+          end
+          
+          it "routes to #edit" do
+            get ( "/posts/#{@post1.id}/edit" ).should route_to("posts#edit")
+          end
+          
+          it "routes to #update" do
+            @post1.title = "Hello word"
+            @post1.body = "Hello word"
+            put ( "/posts/#{@post1.id}" ).should route_to("posts#update")
+          end
+          
+          it "routes to #destroy" do
+            delete ( "/posts/#{@post1.id}" ).should route_to("posts#destroy")
+          end
+          
+          
        end
 end

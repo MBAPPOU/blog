@@ -41,9 +41,31 @@ describe "ListingPosts" do
          click_link 'Look'
          current_path.should == "/posts/#{@post1.id}"
          click_link 'Edit'
-         current_path.should == '/posts'
+         current_path.should == "/posts/#{@post1.id}/edit"
+         current_path.should == "/posts/#{@post1.id}/edit"
        end
     end
     
+    describe "PUT /posts/:id" do
+       it "should update a post" do
+         visit posts_path
+         click_link 'Look'
+         current_path.should == "/posts/#{@post1.id}"
+         click_link 'Edit'
+         current_path.should == "/posts/#{@post1.id}/edit"
+         fill_in 'post_title', :with => 'Hello'
+         fill_in 'post_body', :with => 'word !'
+         click_button 'Post'
+         current_path.should == "/posts/#{@post1.id}"
+       end
+    end
+    
+    describe "DELETE /posts/:id" do
+       it "should delete a post" do
+         visit posts_path
+         click_link 'Delete'
+         current_path.should == "/posts"
+       end
+    end
   end
 end

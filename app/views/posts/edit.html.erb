@@ -1,15 +1,17 @@
-<h1>Posts#edit</h1>
+<h1>Edit Post</h1>
 
-<ul>
+<ul>  
 
-<%= form_for @post, :url => {"action"=>"edit", "controller"=>"posts", "id"=>":id"}, :html => {:class => "edit post"} do |f| %>
+<li>Post id = @post.id</li>
 
-    <li><%= f.label :title %></li>
-    <li><%= f.text_field :title %></li>
-    <li><%= f.label :body %></li>
-    <li><%= f.text_area :body %></li>
-    <li><%= f.submit "Post" %></li>
-    
+<%= form_for @post, :url => { :action => "update" }, :html => {:method => "put",:class => "edit_post"} do |f| %>
+     <p><%= f.label :title %></p>
+     <p><%= f.text_field :title %></p>
+     <p><%= f.label :body %></p>
+     <p><%= f.text_area :body %></p>
+     <p><%= f.submit "Post" %></p>
+     
+     <p><%= link_to "Back", posts_path(@post) %></p>
 <% end %>
 
 </ul>

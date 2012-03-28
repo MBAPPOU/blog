@@ -1,8 +1,10 @@
 Blog::Application.routes.draw do
 
 
-  resources :posts , :only => [:index,:new,:show]
+  resources :posts , :only => [:index,:new,:show,:edit,:destroy]
   match '/posts' => "posts#create", :via => :post
+  match '/posts/:id' => "posts#update", :via => :put
+  #match '/posts/:id' => "posts#delete", :via => :get , :as => :delete_post
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
