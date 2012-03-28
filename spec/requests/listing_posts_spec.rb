@@ -39,6 +39,7 @@ describe "ListingPosts" do
        it "should print a post" do
          visit posts_path
          click_link 'Look'
+         current_path.should == "/posts/#{@post1.id}"
          click_link 'Edit'
          current_path.should == '/posts'
        end
