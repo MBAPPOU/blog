@@ -1,0 +1,16 @@
+<h1>New Comment</h1>
+
+<ul>  
+
+<li>New Comment</li>
+
+<%= form_for @comment, :url => { :action => "create" }, :html => {:class => "new_comment"} do |f| %>
+  <p><%= f.label :author %></p>
+  <p><%= f.text_field :author %></p>
+  <p><%= f.label :body %></p>
+  <p><%= f.text_area :body, :size => "60x12" %></p>
+  <p><%= f.submit "Commit" %></p>
+<% end %>
+
+    <p> <%= link_to "Back", posts_path %> </p>
+</ul>
