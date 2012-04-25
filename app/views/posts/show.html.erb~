@@ -1,24 +1,23 @@
-<h1>Post Show</h1>
+<h1>Visualiser le post : <%= @post.title %></h1>
 
 <ul>  
 
-<li>Post id = @post.id</li>
 
-     <p>Titre : <%= @post.title %></p>
+     <p><%= flash[:error] %></p>
      
-     <p>Corps : <%= @post.body %></p>
+     <p><%= @post.body %></p> <%= link_to "Editer", edit_post_path(@post) %> <%= link_to "Supprimer" , post_path(@post), :method => "delete", :confirm => "Etes-vous sûr?" %> <%= link_to "Commenter" , new_post_comment_path(@post) %> <%= link_to "Retour", posts_path %>
      
-     <p><%= link_to "Edit", edit_post_path(@post) %></p>
-     <p><%= link_to "Delete" , post_path(@post), :method => "delete", :confirm => "Are you sure?" %></p>
-     <p><%= link_to "Add Comment" , new_post_comment_path(@post) %></p>
-     <p><%= link_to "Back", posts_path %></p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
      
-     <p>Commentaires : 
+     <p>
             <% @post.comments.each do |comment| %>
-            --- 
-             Auteur : <%= comment.author %>
-             Contenu : <%= comment.body %>
-            <p><%= link_to "Delete Comment", post_comment_path(comment) %></p>
+        Commentaires : 
+             <b>Auteur :</b> <%= comment.author %>
+             <b>Contenu :</b> <%= comment.body %> <%= link_to "Supprimer",post_comment_path(comment),:method => "delete",:confirm => 'Etes-vous sûr?' %>
+             <p></p>
             ---
             <% end %>
      </p>

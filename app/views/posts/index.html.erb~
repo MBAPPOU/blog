@@ -4,7 +4,6 @@
 
 <p><%= flash[:error] %></p>
 
-
 <li>Liste des posts</li>
 
 <% @posts.each do |post| %> 

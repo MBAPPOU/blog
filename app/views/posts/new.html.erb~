@@ -7,7 +7,7 @@
   <p><%= f.text_field :title %></p>
   <p><%= f.label :Contenu %></p>
   <p><%= f.text_area :body, :size => "60x12" %></p>
-  <p><%= f.submit "Créer" %></p>
+  <p><%= f.submit "Create" %></p>
 <% end %>
 
     <p> <%= link_to "Retour", posts_path %> </p>

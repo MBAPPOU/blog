@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe "ListingPosts" do
-  describe "GET /posts" do
     before(:each) do
       @post1 = Post.create(:title => "sujet1", :body => "bla bla")
       @post2 = Post.create(:title => "sujet2", :body => "bla bla")
@@ -81,5 +80,19 @@ describe "ListingPosts" do
        end
     end
     
-  end
+    describe "DELETE /posts/:post_id/comments/:id" do
+       it "should create a comment on post" do
+         visit posts_path
+         click_link 'Look'
+         current_path.should == "/posts/#{@post1.id}"
+         click_link 'Add Comment'
+         current_path.should == "/posts/#{@post1.id}/comments/new"
+         fill_in 'comment_author', :with => 'Yvan'
+         fill_in 'comment_body', :with => 'Genial !'
+         click_button 'Commit'
+         current_path.should == "/posts/#{@post1.id}"
+         click_link 'Delete Comment'
+         current_path.should == "/posts/#{@post1.id}"
+       end
+    end
 end
