@@ -2,6 +2,8 @@
 
 <ul>  
 
+<p><%= flash[:error] %></p>
+
 
 <%= form_for @post, :url => {:action => "update"},:method => :put, :html => {:class => "Edit Post"} do |f| %>
      <p><%= f.label :titre %></p>

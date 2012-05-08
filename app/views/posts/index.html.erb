@@ -1,6 +1,9 @@
 <h1>Blog</h1>
 
-<ul>  
+<ul> 
+ 
+<p><%= link_to "Se loguer", :controller => "application", :action => "authenticate" %> <%= link_to "Se deconnecter", :controller => "application", :action => "disconnect" %></p>
+
 
 <p><%= flash[:error] %></p>
 
@@ -9,12 +12,14 @@
 
 <% @posts.each do |post| %> 
 
-     <p>--</p>
-     <p>Titre : <%= post.title %></p> <%= link_to "Lire", post_path(post) %> <%= link_to "Editer", edit_post_path(post) %> <%= link_to "Supprimer" , post_path(post), :method => "delete", :confirm => "Etes-vous sûr?" %>
+     <div>
+     <p>Titre : <%= post.title %></p> <%= link_to "Lire", post_path(post) %> <%= link_to "Editer", edit_post_path(post) , :remote => true %> <%= link_to "Supprimer" , post_path(post), :method => "delete", :confirm => "Etes-vous sûr?" ,:remote => true %>
+     </div>
 <% end %>
+    
 
     
-    <p> <> <%= link_to "Créer un nouveau post", new_post_path %> </p>
+    <p><%= link_to "Creer un nouveau post", new_post_path , :remote => true %></p>
 </ul>
 
 

@@ -12,5 +12,5 @@
   <p><%= f.submit "Créer" %></p>
 <% end %>
 
-    <p> <%= link_to "Back", post_path(@comment.post) %> </p>
+    <p> <%= link_to "Retour", post_path(@comment.post) %> </p>
 </ul>

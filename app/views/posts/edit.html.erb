@@ -4,15 +4,7 @@
 
 <p><%= flash[:error] %></p>
 
-
-<%= form_for @post, :url => {:action => "update"},:method => :put, :html => {:class => "Edit Post"} do |f| %>
-     <p><%= f.label :titre %></p>
-     <p><%= f.text_field :title %></p>
-     <p><%= f.label :Contenu %></p>
-     <p><%= f.text_area :body %></p>
-     <p><%= f.submit "Modifier" %></p>
+<%= render 'form' %>
      
      <p><%= link_to "Retour", post_path(@post) %></p>
-<% end %>
-
 </ul>

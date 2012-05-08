@@ -1,0 +1,5 @@
+$("form").remove();
+$('div a[href="<%= edit_post_path(@post.id) %>"]').parent().append("<div><%= escape_javascript(render 'form') %></div>");
+$("form#edit_post").attr("data-remote", true);
+$('div a[href="<%= edit_post_path(@post.id) %>"]').fadeOut();
+$('div a[href="<%= new_post_comment_path(@post.id) %>"]').fadeOut();

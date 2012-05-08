@@ -62,8 +62,12 @@ describe PostsController do
             get ( "/posts/#{@post1.id}/comments/new" ).should route_to("comments#new")
           end
           
-          it "routes to comments#new" do
+          it "routes to comments#destroy" do
             delete ( "/posts/#{@post1.id}/comments/#{@comment.id}" ).should route_to("comments#destroy")
+          end
+          
+          it "routes to application#login" do
+            get ( "/login" ).should route_to("application#login")
           end
        end
 end

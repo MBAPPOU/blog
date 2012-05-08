@@ -1,0 +1,1 @@
+$('div a[href="<%= post_path(@post.id) %>"]').parent().remove();

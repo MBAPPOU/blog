@@ -2,14 +2,7 @@
 
 <ul>  
 
-<%= form_for @post, :url => { :action => "create" }, :html => {:class => "new_post"} do |f| %>
-  <p><%= f.label :Titre %></p>
-  <p><%= f.text_field :title %></p>
-  <p><%= f.label :Contenu %></p>
-  <p><%= f.text_area :body, :size => "60x12" %></p>
-  <p><%= f.submit "Create" %></p>
-<% end %>
+<%= render 'form' %>
 
-    <p> <%= link_to "Retour", posts_path %> </p>
+    <p> <%= link_to "Retour", posts_path , :remote => true %> </p>
 </ul>
-

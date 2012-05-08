@@ -1,0 +1,15 @@
+<ul>  
+
+<%= form_for (@post) do |f| %>
+  <div class="field">
+     <p><%= f.label :Titre %></p>
+     <p><%= f.text_field :title %></p>
+     <p><%= f.label :Contenu %></p>
+     <p><%= f.text_area :body, :size => "60x12" %></p>
+  </div>
+  <div class="actions">
+     <p><%= f.submit "Soumettre" %></p>
+  </div>
+<% end %>
+
+</ul>

@@ -17,10 +17,10 @@ describe "ListingPosts" do
     describe "GET /posts/new " do
        it "should create a new post" do
          visit posts_path
-         click_link 'Create a new Post'
+         click_link 'Creer un nouveau post'
          fill_in 'post_title', :with => 'nouveau post'
          fill_in 'post_body', :with => 'Coucou un nouveau post !'
-         click_button 'Create'
+         click_button 'Soumettre'
          current_path.should == '/posts'
        end
     end
@@ -28,8 +28,8 @@ describe "ListingPosts" do
     describe "GET /posts/:id " do
        it "should print a post" do
          visit posts_path
-         click_link 'Look'
-         click_link 'Back'
+         click_link 'Lire'
+         click_link 'Retour'
          current_path.should == '/posts'
        end
     end
@@ -37,9 +37,9 @@ describe "ListingPosts" do
     describe "GET /posts/:id/edit " do
        it "should print a post for edition" do
          visit posts_path
-         click_link 'Look'
+         click_link 'Lire'
          current_path.should == "/posts/#{@post1.id}"
-         click_link 'Edit'
+         click_link 'Editer'
          current_path.should == "/posts/#{@post1.id}/edit"
        end
     end
@@ -47,13 +47,13 @@ describe "ListingPosts" do
     describe "PUT /posts/:id" do
        it "should update a post" do
          visit posts_path
-         click_link 'Look'
+         click_link 'Lire'
          current_path.should == "/posts/#{@post1.id}"
-         click_link 'Edit'
+         click_link 'Editer'
          current_path.should == "/posts/#{@post1.id}/edit"
          fill_in 'post_title', :with => 'Hello'
          fill_in 'post_body', :with => 'word !'
-         click_button 'Post'
+         click_button 'Soumettre'
          current_path.should == "/posts/#{@post1.id}"
        end
     end
@@ -61,7 +61,7 @@ describe "ListingPosts" do
     describe "DELETE /posts/:id" do
        it "should delete a post" do
          visit posts_path
-         click_link 'Delete'
+         click_link 'Supprimer'
          current_path.should == "/posts"
        end
     end
@@ -69,13 +69,13 @@ describe "ListingPosts" do
     describe "GET /posts/:id/comments/new" do
        it "should create a comment on post" do
          visit posts_path
-         click_link 'Look'
+         click_link 'Lire'
          current_path.should == "/posts/#{@post1.id}"
-         click_link 'Add Comment'
+         click_link 'Commenter'
          current_path.should == "/posts/#{@post1.id}/comments/new"
          fill_in 'comment_author', :with => 'Yvan'
          fill_in 'comment_body', :with => 'Genial !'
-         click_button 'Commit'
+         click_button 'Creer'
          current_path.should == "/posts/#{@post1.id}"
        end
     end
@@ -83,15 +83,15 @@ describe "ListingPosts" do
     describe "DELETE /posts/:post_id/comments/:id" do
        it "should create a comment on post" do
          visit posts_path
-         click_link 'Look'
+         click_link 'Lire'
          current_path.should == "/posts/#{@post1.id}"
-         click_link 'Add Comment'
+         click_link 'Commenter'
          current_path.should == "/posts/#{@post1.id}/comments/new"
          fill_in 'comment_author', :with => 'Yvan'
          fill_in 'comment_body', :with => 'Genial !'
-         click_button 'Commit'
+         click_button 'Creer'
          current_path.should == "/posts/#{@post1.id}"
-         click_link 'Delete Comment'
+         click_link 'Supprimer'
          current_path.should == "/posts/#{@post1.id}"
        end
     end
