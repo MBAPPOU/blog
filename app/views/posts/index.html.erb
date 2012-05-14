@@ -2,7 +2,7 @@
 
 <ul> 
  
-<p><%= link_to "Se loguer", :controller => "application", :action => "authenticate" %> <%= link_to "Se deconnecter", :controller => "application", :action => "disconnect" %></p>
+<p><%= link_to "Se loguer", login_path %> <%= link_to "Se deconnecter", disconnect_path %></p>
 
 
 <p><%= flash[:error] %></p>
@@ -13,7 +13,7 @@
 <% @posts.each do |post| %> 
 
      <div>
-     <p>Titre : <%= post.title %></p> <%= link_to "Lire", post_path(post) %> <%= link_to "Editer", edit_post_path(post) , :remote => true %> <%= link_to "Supprimer" , post_path(post), :method => "delete", :confirm => "Etes-vous sûr?" ,:remote => true %>
+     <p>Titre : <%= post.title %></p> <%= link_to "Lire", post_path(post) %> <%= link_to "Supprimer" , post_path(post), :method => "delete", :confirm => "Etes-vous sûr?" , :remote => true %>
      </div>
 <% end %>
     

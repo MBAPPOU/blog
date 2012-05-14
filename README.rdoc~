@@ -93,7 +93,7 @@ Les comptes utilisables pour s'authentifier venant du blog afin d'atteindre les 
 login : "super_user" mdp : "su" pour un administrateur.
 login : "Engel" mdp : "engel" pour un utilisateur standard.
 
-NB: Avant d'editer,créer un post ou commenter un post, supprimer un posts, vous devez être préalablement logué en cliquant sur le lien "se connecter" car je n'arrive pas à expliquer pourquoi l'application ne le fait pas automatiquement alors que les controlleurs ont bien un "before filter" de configuré!
+NB: Avant d'editer,créer un post ou commenter un post, supprimer un posts, vous devez être préalablement logué en cliquant sur le lien "se connecter" car je n'arrive pas à expliquer pourquoi l'application ne le fait pas automatiquement alors que les controlleurs ont bien un before filter de configuré!
 
 Avant d'exécuter les jeux de tests de l'application "blog", bien vouloir désactiver les fonctions d'authentication en commentant les lignes "before_filter" des controllers de post et de commentaires.
 

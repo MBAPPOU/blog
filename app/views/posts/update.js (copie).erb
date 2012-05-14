@@ -1,0 +1,8 @@
+$("form").remove();
+$('div p').remove();
+$('div a[href="<%= new_post_comment_path(@post) %>"]').remove();
+$('div a[href="<%= post_path(@post) %>"]').remove();
+$('div a[href="<%= edit_post_path(@post) %>"]').remove();
+$('div a[href="<%= posts_path %>"]').parent().append("<p><%= escape_javascript( @post.body ) %></p> <%= escape_javascript(link_to 'Editer', edit_post_path(@post), remote => true) %> <%= escape_javascript(link_to 'Supprimer' , post_path(@post), :method => "delete", :confirm => "Etes-vous sûr?" , :remote => true) %> <%= escape_javascript(link_to 'Commenter' , new_post_comment_path(@post)) %>");
+$('div a[href="<%= posts_path %>"]').remove();
+$('div a[href="<%= post_path(@post) %>"]').parent().append("<%= escape_javascript(link_to 'Retour', posts_path) %>")

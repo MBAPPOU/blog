@@ -1,0 +1,3 @@
+$('div a[href="<%= edit_post_path(@post) %>"]').parent().remove();
+$("body").append("<div><p><%= escape_javascript( @post.body ) %></p> <%= escape_javascript(link_to 'Editer', edit_post_path(@post), :remote => true) %> <%= escape_javascript(link_to 'Supprimer' , post_path(@post), :method => "delete", :confirm => "Etes-vous sûr?" , :remote => true) %> <%= escape_javascript(link_to 'Commenter' , new_post_comment_path(@post)) <%= escape_javascript(link_to 'Retour', posts_path) %></div>%>");
+$("form#edit_post").remove();

@@ -1,3 +1,4 @@
-$("body").append("<div><%= escape_javascript(@post.title) %> <%= escape_javascript(link_to 'Editer', edit_post_path(@post), :remote => true) %> <%= escape_javascript(link_to 'Supprimer', @post, confirm: 'Etes-vous sur ?', :remote => true, method: :delete) %> </div>"); 
+$("body").append("<div>     <p>Titre : <%= escape_javascript(@post.title) %></p> <%= escape_javascript(link_to 'Lire', post_path(@post)) %> <%= escape_javascript(link_to 'Editer', edit_post_path(@post), :remote => true) %> <%= escape_javascript(link_to 'Supprimer', @post, confirm: 'Etes-vous sur ?', :remote => true, :method => 'delete') %> </div>");
 $("form#new_post").remove();
-$("a[href='<%= new_post_path %>']").fadeIn();
+$("a[href='<%= new_post_path %>']").remove();
+$("body").append("<p><%= escape_javascript(link_to "Creer un nouveau post", new_post_path , :remote => true)  %></p>");

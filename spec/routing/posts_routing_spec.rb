@@ -67,7 +67,15 @@ describe PostsController do
           end
           
           it "routes to application#login" do
-            get ( "/login" ).should route_to("application#login")
+            get ( '/login' ).should route_to("application#login")
+          end
+          
+          it "routes to application#authenticate" do
+            get ( '/authenticate' ).should route_to("application#authenticate")
+          end
+          
+          it "routes to application#disconnect" do
+            get ( '/disconnect' ).should route_to("application#disconnect")
           end
        end
 end

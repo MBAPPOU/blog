@@ -1,5 +1,6 @@
 Blog::Application.routes.draw do
 
+
   resources :posts , :only => [:index,:new,:show,:edit,:destroy] do
      resources :comments , :only => [:new,:destroy]
   end
@@ -7,6 +8,8 @@ Blog::Application.routes.draw do
   match '/posts/:id' => "posts#update", :via => :put
   match '/posts/:post_id/comments' => "comments#create", :via => :post
   match '/login' => "application#login" , :via => :get
+  match '/authenticate' => "application#authenticate" , :via => :get
+  match '/disconnect' => "application#disconnect" , :via => :get
   #match '/posts/:id' => "posts#delete", :via => :get , :as => :delete_post
   
   # The priority is based upon order of creation:

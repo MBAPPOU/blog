@@ -6,7 +6,7 @@
      <p><%= flash[:error] %></p>
      
      <div>
-     <p><%= @post.body %></p> <%= link_to "Editer", edit_post_path(@post) ,:remote => true %> <%= link_to "Supprimer" , post_path(@post), :method => "delete", :confirm => "Etes-vous sûr?" ,:remote => true %> <%= link_to "Commenter" , new_post_comment_path(@post) %> <%= link_to "Retour", posts_path %>
+     <p><%= @post.body %></p> <%= link_to "Editer", edit_post_path(@post) , :remote => true %> <%= link_to "Supprimer" , post_path(@post), :method => "delete", :confirm => "Etes-vous sûr?" , :remote => true %> <%= link_to "Commenter" , new_post_comment_path(@post) %> <%= link_to "Retour", posts_path %>
      </div>
      
      <p></p>

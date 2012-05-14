@@ -84,9 +84,9 @@ describe PostsController do
       assigns(:post).should eq @post
     end
 
-    it "renders a list of post" do
+    it "renders a list of post after redirection" do
       get 'destroy'
-      response.should render_template(:index)
+      response.should be_redirect
     end
   end
 end
